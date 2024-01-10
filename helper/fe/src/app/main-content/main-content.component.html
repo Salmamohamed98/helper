@@ -1,0 +1,24 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>{{ selectedNavItem }}</h1>
+        <nav>
+          <ol class="breadcrumb">
+               <li class="breadcrumb-item">{{actionOwner}}</li>
+            <li class="breadcrumb-item ">{{actionType}}</li>
+          </ol>
+        </nav>
+      </div>
+      <section class="section dashboard">
+        <ng-container *ngIf="selectedNavItem === 'Dash Board'">
+           <app-dashboard></app-dashboard>
+          </ng-container>
+        <ng-container *ngIf="selectedNavItem === 'Account Management'">
+            <app-acmanagement></app-acmanagement>
+          </ng-container>
+      
+          <ng-container *ngIf="selectedNavItem === 'Tools'">
+            <app-wlpage></app-wlpage>
+          </ng-container>
+          <!-- ng- container will be added for each nav item selected -->
+      </section>
+</main>

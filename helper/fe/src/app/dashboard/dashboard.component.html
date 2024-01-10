@@ -1,0 +1,48 @@
+
+    <div class="row justify-content-center">
+          <div class="col-lg-6 mb-4 order-0">
+            <div class="card">
+              <div class="d-flex align-items-end row">
+                <div class="col-sm-7">
+                  <div class="card-body">
+                    <span class="card-title text-primary">Welcome </span><span class="card-title text-primary">User</span> 
+                    <p class="mb-4">
+                      Here you can monitor all your machines status.
+                    </p>
+    
+                    
+                  </div>
+                </div>
+                <div class="col-sm-5 text-center text-sm-left">
+                  <div class="card-body pb-0 px-0 px-md-4">
+                    <img src="assets/img/man-with-laptop-light.png" height="140" alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png" data-app-light-img="illustrations/man-with-laptop-light.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="row ">
+            <div class="col-3" *ngFor="let sys of systems">
+              <div class="card h-100">
+                <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                  <div class="card-title mb-0">
+                    <h5 class="m-0 me-2">{{sys.name}}</h5>
+                    <small class="text-muted">{{sys.ip}}</small>
+                  </div>
+                  
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-3 p-1">
+                    
+                    <div class="orderStatisticsChart"></div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+           
+        
+            <!--/ Order Statistics -->
+          </div>
+       

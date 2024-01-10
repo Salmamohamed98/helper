@@ -1,0 +1,103 @@
+ <div class="row ">
+        <div class="card">
+
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
+                    <li class="nav-item"><a class="nav-link active"
+                        aria-current="true" data-bs-toggle="tab" href="#utest">USSD </a>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+                        href="#SMtest">SMSC</a></li>
+                </ul>
+            </div>
+
+            <div class="card-body ">
+                <div class="tab-content">
+                    <div class=" tab-pane active" id="utest" role="tabpanel">
+                        <div class="p-1 col-12">
+                            <form>
+                                <!-- environment  -->
+                                <div class="row d-grid gap-2 d-md-flex">
+                                    <label class="col-2 col-form-label" align="right">Environment:</label>
+                                    <div class="col-8 form-group">
+
+                                        <select class="form-control form-select" id="environment">
+                                            <option value="" hidden="">Choose the Environment..</option>
+                                            <option [(ngModel)]="test" name="test" value="test" (change)="choose('test')">Testing</option>
+                                            <option >Staging</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 d-grid gap-2 d-md-flex">
+                                    <label class="col-2 col-form-label" align="right">Short Code:</label>
+                                    <div class="col-8 form-group">
+                                        <div class="col">
+                                            <input class="form-control form-select" list="shortCodes" id="exampleDataList" placeholder="Type Short code ">
+                                            <datalist id="shortCodes">
+                                                        <!-- <option *ngFor="let sc of shortcodes" [(ngModel)]="envsc" name="envsc" value="sc"  >{{sc}}</option> -->
+                                            </datalist>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- environment  -->
+
+
+
+                                <!-- password -->
+                                <div class="row mt-2 d-grid gap-2 d-md-flex">
+                                
+                                    <label for="inputPassword" class="col-2 col-form-label" align="right">MSISDNS:</label>
+                                    <div class="col-8">
+                                        <textarea class="wlist form-control" id="ussd" rows="5"></textarea>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                                    <button class="btn btn-primary me-md-2" type="button" disabled="" onclick="submitt()" id="usave">Save</button>
+                                    <button class="btn btn-primary" type="button" onclick="window.location.reload()">Cancel</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+        
+                <div class=" tab-pane" id="SMtest">
+
+                    <div class="p-1 col-8">
+                        <form method="post" onsubmit="true">
+                            <!-- password -->
+                            <div class="row mb-3">
+                                <label for="inputPassword" class="col-sm-4 col-form-label"
+                                    align="right">MSISDNS:</label>
+                                <div class="col-sm-8">
+                                    <textarea class="wlist form-control" id="messaging" rows="5"></textarea>
+                                </div>
+                            </div>
+
+
+
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button class="btn btn-primary me-md-2" type="button" disabled id="msave" onclick="submitt()">Save</button>
+                                <button class="btn btn-primary" type="button"
+                                    onclick="window.location.reload()">Cancel</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+
